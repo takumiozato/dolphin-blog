@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Dolphin`,
+    description: `フロントエンドエンジニアの日々の学びをつらつらと`,
+    author: `takumi ozato`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,14 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: "84c83e39-eb73-4d4a-928c-502596dd44f3",
+        serviceId: "dolphin",
+        endpoint: "post",
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
