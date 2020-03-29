@@ -7,13 +7,15 @@ import Card from "../components/Card/card"
 const IndexPage = ({ data }) => (
   <Layout>
     <SEO title="HOME" />
-    {data.allMicrocmsPost.edges.map(post => (
-      <Card
-        key={post.node.id}
-        title={post.node.title}
-        createdAt={post.node.createdAt}
-      />
-    ))}
+    <section>
+      {data.allMicrocmsPost.edges.map(post => (
+        <Card
+          key={post.node.id}
+          title={post.node.title}
+          createdAt={post.node.createdAt}
+        />
+      ))}
+    </section>
   </Layout>
 )
 

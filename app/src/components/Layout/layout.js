@@ -6,10 +6,18 @@ import Header from "../Header/header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           title
+        }
+      }
+      microcmsProfile {
+        id
+        body
+        name
+        image {
+          url
         }
       }
     }
@@ -18,14 +26,24 @@ const Layout = ({ children }) => {
   return (
     <div className={LayoutStyles.layout}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <main>{children}</main>
-      <footer>
-        <ul>
-          <li>HOME</li>
-          <li>仕事について</li>
-          <li>生活について</li>
-        </ul>
-      </footer>
+      <div className={LayoutStyles.container}>
+        <aside className={LayoutStyles.aside_area}>
+          <div className={LayoutStyles.profile_image_wrapper}>
+            <img
+              src={`${data.microcmsProfile.image.url}?w=200&h=200&fit=crop`}
+              alt="プロフィール画像"
+            />
+          </div>
+          <p className={LayoutStyles.profile_name}>
+            {data.microcmsProfile.name}
+          </p>
+          <p className={LayoutStyles.profile_description}>
+            {data.microcmsProfile.body}
+          </p>
+        </aside>
+        <main className={LayoutStyles.main_area}>{children}</main>
+      </div>
+      <footer></footer>
     </div>
   )
 }

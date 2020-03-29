@@ -3,6 +3,16 @@
   padding: 10px 20px;
   margin-bottom: 15px;
   border-radius: 8px;
+  transition: 0.25s ease;
+  cursor: pointer;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card:hover {
+  background-color: #f4f4f4;
 }
 
 .title {

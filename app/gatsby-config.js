@@ -36,6 +36,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-source-microcms",
+      options: {
+        apiKey: "84c83e39-eb73-4d4a-928c-502596dd44f3",
+        serviceId: "dolphin",
+        endpoint: "profile",
+      },
+    },
+    {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
         fonts: [`Roboto:300,400,500,700`, `Lato`],
