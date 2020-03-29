@@ -1,9 +1,9 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import Container from "@material-ui/core/Container"
 
-import Header from "./header"
-import "./layout.css"
+import Header from "../Header/header"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -17,23 +17,17 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <Container maxWidth="md">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
-    </>
+      <main>{children}</main>
+      <footer>
+        <ul>
+          <li>HOME</li>
+          <li>仕事について</li>
+          <li>生活について</li>
+        </ul>
+      </footer>
+    </Container>
   )
 }
 
