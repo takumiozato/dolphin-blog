@@ -22,8 +22,12 @@ export const query = graphql`
     allMicrocmsPost {
       edges {
         node {
+          id
           body
           title
+          image {
+            url
+          }
           createdAt(locale: "ja", formatString: "YYYY/MM/DD")
         }
       }

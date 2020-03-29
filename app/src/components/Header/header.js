@@ -5,7 +5,7 @@ import HeaderStyles from "./style.module.css"
 
 const Header = ({ siteTitle }) => (
   <header className={HeaderStyles.header}>
-    <h1>
+    <h1 className={HeaderStyles.title}>
       <Link className={HeaderStyles.link} to="/">
         {siteTitle}
       </Link>
